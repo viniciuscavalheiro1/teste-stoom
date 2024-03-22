@@ -23,8 +23,9 @@ public class CategoryBO implements ICategoryBO {
     private ModelMapper modelMapper;
 
     @Override
-    public Category saveCategory(Category category) {
-        return categoryRepository.save(category);
+    public CategoryDTO saveCategory(CategoryDTO category) {
+        Category categorySave = categoryRepository.save(modelMapper.map(category, Category.class));
+        return category;
     }
 
     @Override

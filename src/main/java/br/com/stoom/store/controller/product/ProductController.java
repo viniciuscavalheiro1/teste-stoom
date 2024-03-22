@@ -2,11 +2,13 @@ package br.com.stoom.store.controller.product;
 
 import br.com.stoom.store.business.ProductBO;
 import br.com.stoom.store.model.Product;
+import br.com.stoom.store.model.dto.BrandDTO;
 import br.com.stoom.store.model.dto.CategoryDTO;
 import br.com.stoom.store.model.dto.ProductDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -35,6 +37,12 @@ public class ProductController {
     public ResponseEntity<Optional<ProductDTO>> findProductById(@PathVariable Long id) {
 
         return ResponseEntity.ok(productService.findById(id));
+    }
+
+    @PostMapping(value = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<ProductDTO> save(@RequestBody ProductDTO product) {
+        ProductDTO categorySave = productService.saveProducrt(product);
+        return ResponseEntity.ok(categorySave);
     }
 
     @PatchMapping("/delete/{productId}")

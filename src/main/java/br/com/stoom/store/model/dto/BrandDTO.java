@@ -23,6 +23,11 @@ public class BrandDTO implements Serializable {
         this.products = products;
     }
 
+    public BrandDTO(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
     public BrandDTO() {
     }
 

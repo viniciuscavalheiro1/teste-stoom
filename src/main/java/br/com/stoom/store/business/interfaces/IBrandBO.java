@@ -11,5 +11,6 @@ public interface IBrandBO {
     Optional<BrandDTO> findById(Long id);
     void deactivateCategory(Long brandId);
 
+    BrandDTO saveBrand(BrandDTO brand);
 
 }

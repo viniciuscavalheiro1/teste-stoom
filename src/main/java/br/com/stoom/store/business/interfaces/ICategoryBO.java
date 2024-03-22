@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface ICategoryBO {
 
-    Category saveCategory(Category category);
+    CategoryDTO saveCategory(CategoryDTO category);
 
     List<Category> findAllByActiveTrue();
 

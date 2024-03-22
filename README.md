@@ -1,4 +1,13 @@
+**Banco de dados em Docker (Antes de rodar a aplicação)**
+rodar comando: docker-compose up -d
+
 **Swagger da API: http://localhost:8080/swagger-ui.html**
+
+**Collection Postman**
+arquivo na raiz do projeto: teste-stoom.postman_collection.json
+
+
+
 
 **Seja bem-vindo candidato!**
 

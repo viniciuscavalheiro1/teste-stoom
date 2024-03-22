@@ -41,6 +41,12 @@ public class BrandBO implements IBrandBO {
     }
 
     @Override
+    public BrandDTO saveBrand(BrandDTO brand) {
+        Brand brandSave = brandRepository.save(modelMapper.map(brand, Brand.class));
+        return brand;
+    }
+
+    @Override
     public void deactivateCategory(Long categoryId) {
         Brand brand = brandRepository.findById(categoryId).orElseThrow(() -> new EntityNotFoundException("Product not found"));
         brand.deactivate();

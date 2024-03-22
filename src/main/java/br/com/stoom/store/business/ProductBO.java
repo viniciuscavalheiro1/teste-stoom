@@ -1,7 +1,9 @@
 package br.com.stoom.store.business;
 
 import br.com.stoom.store.business.interfaces.IProductBO;
+import br.com.stoom.store.model.Category;
 import br.com.stoom.store.model.Product;
+import br.com.stoom.store.model.dto.CategoryDTO;
 import br.com.stoom.store.model.dto.ProductDTO;
 import br.com.stoom.store.repository.ProductRepository;
 import org.modelmapper.ModelMapper;
@@ -33,6 +35,12 @@ public class ProductBO implements IProductBO {
     public Optional<ProductDTO> findById(Long id) {
         Optional<Product> product = productRepository.findById(id);
         return Optional.ofNullable(modelMapper.map(product, ProductDTO.class));
+    }
+
+    @Override
+    public ProductDTO saveProducrt(ProductDTO product) {
+        Product categorySave = productRepository.save(modelMapper.map(product, Product.class));
+        return product;
     }
 
     @Override

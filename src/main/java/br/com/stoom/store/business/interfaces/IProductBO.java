@@ -9,4 +9,6 @@ public interface IProductBO {
 
     void deactivateProduct(Long productId);
 
+    ProductDTO saveProducrt(ProductDTO product);
+
 }
